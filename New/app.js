@@ -9,17 +9,9 @@ const app = express();
 //MIDDLEWARES 
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(express.static(`${__dirname}/starter/public`));
 
-// app.get('/', (req, res) => {
-//     res.status(200).json({
-//         message: 'Hello From the server side', app: 'Natorus'
-//     });
-// });
-// app.post('/', (req, res) => {
-//     res.send(
-//         'You can Post to this output...'
-//     );
-// });
+
 
 
 
@@ -29,7 +21,7 @@ app.use(express.json());
 
 
 app.use((req, res, next) => {
-    console.log('Hello From The Middleware ☺');
+    console.log('Hello From The Middleware 😃');
     next();
 });
 
