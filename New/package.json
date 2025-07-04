@@ -4,11 +4,13 @@
   "description": "Learn Node Express MongoDb",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon server.js"
+    "start:dev": "nodemon server.js",
+    "start:prod": "cross-env NODE_ENV=production nodemon server.js"
   },
   "author": "Sudip",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^17.0.1",
     "express": "^4.21.2",
     "morgan": "^1.10.0"
   }

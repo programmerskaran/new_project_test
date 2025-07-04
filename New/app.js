@@ -7,7 +7,12 @@ const userRouter = require('./routes/userRoutes')
 const app = express();
 
 //MIDDLEWARES 
-app.use(morgan('dev'));
+if (process.env.NODE_ENV === 'developemnt') {
+    app.use(morgan('dev'));
+
+}
+
+
 app.use(express.json());
 app.use(express.static(`${__dirname}/starter/public`));
 
